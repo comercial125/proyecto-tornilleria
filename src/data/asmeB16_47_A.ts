@@ -1,0 +1,43 @@
+import { DatosBridaASME } from './asmeB16_5';
+
+export const MATRIZ_ASME_B16_47_A: Record<string, DatosBridaASME> = {
+  // --- CLASE 150 ---
+  '26"_150': { numTaladros: 24, diametroTaladro: '1-3/8"', diametroPerno: '1-1/4"', longitudEsparrago: '8-3/4"', longitudTornillo: '7-1/4"' },
+  '28"_150': { numTaladros: 28, diametroTaladro: '1-3/8"', diametroPerno: '1-1/4"', longitudEsparrago: '9"', longitudTornillo: '7-1/2"' },
+  '30"_150': { numTaladros: 28, diametroTaladro: '1-3/8"', diametroPerno: '1-1/4"', longitudEsparrago: '198mm', longitudTornillo: '7-3/4"' },
+  '32"_150': { numTaladros: 28, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '217mm', longitudTornillo: '8-1/2"' },
+  '34"_150': { numTaladros: 32, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '10-3/4"', longitudTornillo: '8-3/4"' },
+  '36"_150': { numTaladros: 32, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '224mm', longitudTornillo: '9"' },
+  '38"_150': { numTaladros: 32, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '11-1/2"', longitudTornillo: '9-1/2"' },
+  '40"_150': { numTaladros: 36, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '224mm', longitudTornillo: '9-3/4"' },
+  '42"_150': { numTaladros: 36, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '12"', longitudTornillo: '10"' },
+  '44"_150': { numTaladros: 40, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '12-1/4"', longitudTornillo: '10-1/4"' },
+  '46"_150': { numTaladros: 40, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '12-3/4"', longitudTornillo: '10-1/2"' },
+  '48"_150': { numTaladros: 40, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '236mm', longitudTornillo: '11"' },
+  '50"_150': { numTaladros: 44, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '14-1/2"', longitudTornillo: '12"' },
+  '52"_150': { numTaladros: 44, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '14-3/4"', longitudTornillo: '12-1/4"' },
+  '54"_150': { numTaladros: 44, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '15-1/4"', longitudTornillo: '12-1/2"' },
+  '56"_150': { numTaladros: 48, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '15-3/4"', longitudTornillo: '13"' },
+  '58"_150': { numTaladros: 48, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '16-1/4"', longitudTornillo: '13-1/2"' },
+  '60"_150': { numTaladros: 52, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '267mm', longitudTornillo: '13-3/4"' },
+
+  // --- CLASE 300 ---
+  '26"_300': { numTaladros: 28, diametroTaladro: '1-3/8"', diametroPerno: '1-1/4"', longitudEsparrago: '10-1/4"', longitudTornillo: '8-1/2"' },
+  '28"_300': { numTaladros: 28, diametroTaladro: '1-3/8"', diametroPerno: '1-1/4"', longitudEsparrago: '10-3/4"', longitudTornillo: '9"' },
+  '30"_300': { numTaladros: 28, diametroTaladro: '1-5/8"', diametroPerno: '1-1/2"', longitudEsparrago: '12-1/4"', longitudTornillo: '10-1/4"' },
+  '32"_300': { numTaladros: 28, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '13-3/4"', longitudTornillo: '11-1/2"' },
+  '34"_300': { numTaladros: 28, diametroTaladro: '1-7/8"', diametroPerno: '1-3/4"', longitudEsparrago: '14-1/4"', longitudTornillo: '12"' },
+  '36"_300': { numTaladros: 32, diametroTaladro: '2"', diametroPerno: '1-7/8"', longitudEsparrago: '15-1/4"', longitudTornillo: '12-3/4"' },
+  '38"_300': { numTaladros: 32, diametroTaladro: '2"', diametroPerno: '1-7/8"', longitudEsparrago: '15-1/2"', longitudTornillo: '13"' },
+  '40"_300': { numTaladros: 32, diametroTaladro: '2"', diametroPerno: '1-7/8"', longitudEsparrago: '16-1/4"', longitudTornillo: '13-1/2"' },
+  '42"_300': { numTaladros: 32, diametroTaladro: '2"', diametroPerno: '1-7/8"', longitudEsparrago: '16-3/4"', longitudTornillo: '14"' },
+  '44"_300': { numTaladros: 32, diametroTaladro: '2"', diametroPerno: '1-7/8"', longitudEsparrago: '17-1/4"', longitudTornillo: '14-1/2"' },
+  '46"_300': { numTaladros: 32, diametroTaladro: '2-1/4"', diametroPerno: '2"', longitudEsparrago: '18-1/2"', longitudTornillo: '15-1/2"' },
+  '48"_300': { numTaladros: 32, diametroTaladro: '2-1/4"', diametroPerno: '2"', longitudEsparrago: '19-1/4"', longitudTornillo: '16-1/4"' },
+  '50"_300': { numTaladros: 32, diametroTaladro: '2-1/2"', diametroPerno: '2-1/4"', longitudEsparrago: '21-1/2"', longitudTornillo: '18"' },
+  '52"_300': { numTaladros: 32, diametroTaladro: '2-1/2"', diametroPerno: '2-1/4"', longitudEsparrago: '22-1/4"', longitudTornillo: '18-3/4"' },
+  '54"_300': { numTaladros: 28, diametroTaladro: '2-3/4"', diametroPerno: '2-1/2"', longitudEsparrago: '24-1/2"', longitudTornillo: '20-1/2"' },
+  '56"_300': { numTaladros: 28, diametroTaladro: '2-3/4"', diametroPerno: '2-1/2"', longitudEsparrago: '25-1/4"', longitudTornillo: '21-1/4"' },
+  '58"_300': { numTaladros: 32, diametroTaladro: '2-3/4"', diametroPerno: '2-1/2"', longitudEsparrago: '25-3/4"', longitudTornillo: '21-3/4"' },
+  '60"_300': { numTaladros: 32, diametroTaladro: '2-3/4"', diametroPerno: '2-1/2"', longitudEsparrago: '26-1/2"', longitudTornillo: '22-1/2"' },
+};
