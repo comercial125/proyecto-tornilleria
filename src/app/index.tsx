@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { BomTableResult } from '../components/BomTableResult';
+import { GlobalPasswordScreen } from '../components/GlobalPasswordScreen';
 import { ParamSelector } from '../components/ParamSelector';
 import { SplashScreenAnimation } from '../components/SplashScreenAnimation';
 import { indexStyles as styles } from '../constants/styles/index.styles';
@@ -8,6 +9,8 @@ import { useBomCalculator } from '../hooks/useBomCalculator';
 
 export default function IndexScreen() {
   const [cargandoSplash, setCargandoSplash] = useState(true);
+  const [accesoAutorizado, setAccesoAutorizado] = useState(false);
+
   const {
     filas,
     resultado,
@@ -20,6 +23,10 @@ export default function IndexScreen() {
 
   if (cargandoSplash) {
     return <SplashScreenAnimation onFinish={() => setCargandoSplash(false)} />;
+  }
+
+  if (!accesoAutorizado) {
+    return <GlobalPasswordScreen onSuccess={() => setAccesoAutorizado(true)} />;
   }
 
   return (
