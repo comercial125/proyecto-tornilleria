@@ -17,6 +17,14 @@ export const BomTableResult: React.FC<Props> = ({ kits = [], desglosePorUnion = 
 
   if (!listaKits.length && !itemsConsolidados.length) return null;
 
+  // Formateador seguro para evitar traducciones erróneas de "und"
+  const formatearUnidad = (unidad: string) => {
+    if (!unidad || unidad.toLowerCase() === 'und' || unidad.toLowerCase() === 'und.') {
+      return 'und.';
+    }
+    return unidad;
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.tituloSeccion}>Desglose por Kit de Unión</Text>
@@ -29,19 +37,19 @@ export const BomTableResult: React.FC<Props> = ({ kits = [], desglosePorUnion = 
         return (
           <View key={kit.fila.id || index} style={styles.cardUnion}>
             <Text style={styles.headerUnion}>
-              Kit #{kit.numeroKit || index + 1}: {kit.fila.norma} - {kit.fila.diametro} - Clase {kit.fila.clase}
+              Kit #{kit.numeroKit || index + 1}: Flanje {kit.fila.norma} {kit.fila.diametro} Clase {kit.fila.clase}
             </Text>
             <Text style={styles.subHeaderUnion}>
-              Fijación: {kit.fila.tipoFijacion || 'Espárrago'} | Cantidad de Uniones: {kit.fila.cantidadUniones}
+              Fijación: {kit.fila.tipoFijacion || 'Tornillo'} | Arandela: {kit.fila.tipoArandela || 'Doble'} | Cantidad de Uniones: {kit.fila.cantidadUniones}
             </Text>
 
             <View style={styles.tabla}>
-              {/* Encabezado con nueva columna */}
+              {/* Encabezado */}
               <View style={styles.filaHeader}>
                 <Text style={[styles.celdaHeader, { flex: 2 }]}>Elemento</Text>
                 <Text style={[styles.celdaHeader, { flex: 3 }]}>Descripción Técnica</Text>
-                <Text style={[styles.celdaHeader, { flex: 1.2, textAlign: 'center' }]}>Cant. / Unión</Text>
-                <Text style={[styles.celdaHeader, { flex: 1.2, textAlign: 'right' }]}>Total Kit</Text>
+                <Text style={[styles.celdaHeader, { flex: 1.5, textAlign: 'center' }]}>Cant. / Unión</Text>
+                <Text style={[styles.celdaHeader, { flex: 1.5, textAlign: 'right' }]}>Total Kit</Text>
               </View>
 
               {itemsTotales.map((itemTotal, i) => {
@@ -53,13 +61,13 @@ export const BomTableResult: React.FC<Props> = ({ kits = [], desglosePorUnion = 
                     <Text style={[styles.celdaData, { flex: 3 }]}>{itemTotal.descripcion}</Text>
 
                     {/* Cantidad para 1 sola unión */}
-                    <Text style={[styles.celdaData, { flex: 1.2, textAlign: 'center', color: '#64748b' }]}>
-                      {itemUnitario.cantidad} {itemUnitario.unidad}
+                    <Text style={[styles.celdaData, { flex: 1.5, textAlign: 'center', color: '#64748b' }]}>
+                      {`${itemUnitario.cantidad} ${formatearUnidad(itemUnitario.unidad)}`}
                     </Text>
 
                     {/* Total acumulado del Kit */}
-                    <Text style={[styles.celdaData, { flex: 1.2, textAlign: 'right', fontWeight: 'bold' }]}>
-                      {itemTotal.cantidad} {itemTotal.unidad}
+                    <Text style={[styles.celdaData, { flex: 1.5, textAlign: 'right', fontWeight: 'bold' }]}>
+                      {`${itemTotal.cantidad} ${formatearUnidad(itemTotal.unidad)}`}
                     </Text>
                   </View>
                 );
@@ -77,14 +85,14 @@ export const BomTableResult: React.FC<Props> = ({ kits = [], desglosePorUnion = 
             <View style={styles.filaHeader}>
               <Text style={[styles.celdaHeader, { flex: 2 }]}>Categoría</Text>
               <Text style={[styles.celdaHeader, { flex: 3 }]}>Descripción</Text>
-              <Text style={[styles.celdaHeader, { flex: 1, textAlign: 'right' }]}>Total General</Text>
+              <Text style={[styles.celdaHeader, { flex: 1.5, textAlign: 'right' }]}>Total General</Text>
             </View>
             {itemsConsolidados.map((item, i) => (
               <View key={i} style={styles.filaData}>
                 <Text style={[styles.celdaData, { flex: 2, fontWeight: 'bold' }]}>{item.categoria}</Text>
                 <Text style={[styles.celdaData, { flex: 3 }]}>{item.descripcion}</Text>
-                <Text style={[styles.celdaData, { flex: 1, textAlign: 'right', fontWeight: 'bold', color: COLORS.primary }]}>
-                  {item.cantidad} {item.unidad}
+                <Text style={[styles.celdaData, { flex: 1.5, textAlign: 'right', fontWeight: 'bold', color: COLORS.primary }]}>
+                  {`${item.cantidad} ${formatearUnidad(item.unidad)}`}
                 </Text>
               </View>
             ))}
